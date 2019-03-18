@@ -15,3 +15,9 @@
  */
 
  @import "bulma";
+
+
+ .input {
+
+    width:80%;
+ }
