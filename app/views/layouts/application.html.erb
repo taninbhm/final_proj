@@ -31,8 +31,11 @@
               </div>
               <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                 <div class="dropdown-content">
+                <% @categories.each do |category| %>
+                  <%= category.name %>
+                <% end %>
                 <a href="#" class="dropdown-item">
-                Overview
+
               </a>
                 </div>
                 </div>
