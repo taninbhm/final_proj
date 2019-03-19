@@ -46,18 +46,22 @@
             <a href="#" class="navbar-item">Men</a>
             <a href="#" class="navbar-item">About Us</a>
 
+            <% if user_signed_in? %>
+
+            <%= link_to('Logout', destroy_user_session_path, method: :delete, class:'navbar-item menu-items') %>
+
+          <% else %>
+            <%= link_to('Login', new_user_session_path, class:'navbar-item menu-items') %>
+
+          <% end %>
+
         </div>
       </div>
     </div>
   </nav>
 
 
-  <% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
-  </li>
 
-  <% end %>
 
   <p class="notice"><%= notice  %></p>
   <p class="alert"><%= alert  %></p>
