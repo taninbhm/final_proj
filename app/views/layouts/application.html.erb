@@ -11,6 +11,43 @@
 
   <body>
 
+  <nav class="navbar is-black">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="#">Shoe Chic</a>
+      </div>
+      <div id="navMenu"  class="navbar-menu">
+        <div class="navbar-end">
+          <a href="#" class="navbar-item is-active">Home</a>
+
+              <div class="dropdown is-hoverable ">
+              <div class="dropdown-trigger">
+                <div class="navbar-item" aria-haspopup="true" aria-controls="dropdown-menu4">
+                  <a class="menu-items">Women</a>
+                  <span class="icon is-small">
+                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                <div class="dropdown-content">
+                <a href="#" class="dropdown-item">
+                Overview
+              </a>
+                </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="#" class="navbar-item">Men</a>
+            <a href="#" class="navbar-item">About Us</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
   <% if user_signed_in? %>
   <li>
   <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
