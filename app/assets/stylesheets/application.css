@@ -33,3 +33,6 @@
     text-decoration:underline;
     color:#fff
 }
+.dropdown-content a {
+    color:#000;
+}
