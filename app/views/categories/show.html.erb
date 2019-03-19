@@ -1,1 +1,7 @@
-<h1>Categories</h1>
+<h1><%= @category.name  %></h1>
+
+<% @category.products.each do |product|  %>
+    <%= product.title  %>
+    <%= image_tag product.Image.url %>
+
+<% end %>
