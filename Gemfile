@@ -28,6 +28,7 @@ gem 'devise'
 gem 'simple_form'
 gem "bulma-rails", "~> 0.7.4"
 gem "activeadmin"
+gem "carrierwave"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

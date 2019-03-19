@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'products/show'
   resources :categories, only: [:index, :show]
   resources :products, only: [:index, :show]
+  get 'tags/:tags/:id', to: 'categories#show', as: :tag
   get 'categories/index'
   get 'categories/show'
   devise_for :admin_users, ActiveAdmin::Devise.config

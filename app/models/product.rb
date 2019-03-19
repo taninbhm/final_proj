@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
   belongs_to :category
-  validates :title, :Image, :description, :price, presence:true
+  validates :title, :description, :price, presence:true
 end
