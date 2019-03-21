@@ -21,10 +21,11 @@
 
     width:70%;
  }
+
  .menu-items {
      padding-top: 7px;
      color:white;
-     text-decoration: none;
+     text-decoration:underline;
  }
 
  .menu-items:hover {

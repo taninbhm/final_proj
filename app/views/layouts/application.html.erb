@@ -41,12 +41,16 @@
                 </div>
                 </div>
               </div>
-            </div>
 
-            <a href="#" class="navbar-item">Men</a>
-            <a href="#" class="navbar-item">About Us</a>
+            <% @myPages.each do |page| %>
 
-            <% if user_signed_in? %>
+              <%= link_to page.title, page ,  class:"navbar-item"%>
+
+            <% end %>
+
+
+
+          <% if user_signed_in? %>
 
            <%= link_to("Logout", destroy_user_session_path, method: :delete) %>
 
@@ -55,6 +59,7 @@
 
           <% end %>
 
+          </div>
         </div>
       </div>
     </div>
