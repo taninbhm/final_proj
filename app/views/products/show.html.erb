@@ -16,7 +16,7 @@
                         </div>
                         <div class="content article-body">
                             <p><%= @product.description  %></p>
-                            <b>Price: <%= @product.price  %></b>
+                            <b>Price: <%= number_to_currency @product.price  %></b>
                         </div>
                     </div>
                 </div>
