@@ -14,5 +14,5 @@ Rails.application.routes.draw do
 
   # this is empty but just to have a root file
 
-  root 'store#index'
+  root 'pages#home'
 end

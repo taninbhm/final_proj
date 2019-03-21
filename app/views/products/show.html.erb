@@ -1,2 +1,22 @@
-<h1>Products#show</h1>
-<p>Find me in app/views/products/show.html.erb</p>
+
+<div class="container">
+        <!-- START ARTICLE FEED -->
+        <section class="articles">
+            <div class="column is-8 is-offset-2">
+                <!-- START ARTICLE -->
+                <div class="card article">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content has-text-centered">
+                                <p class="title article-title"><%= @product.title  %></p>
+                            </div>
+                        </div>
+                        <div class="media-center">
+                        <%= image_tag @product.Image.medium2.url, class:"center" %>
+                        </div>
+                        <div class="content article-body">
+                            <p><%= @product.description  %></p>
+                            <b>Price: <%= @product.price  %></b>
+                        </div>
+                    </div>
+                </div>

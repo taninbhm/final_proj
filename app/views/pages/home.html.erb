@@ -1,0 +1,20 @@
+<div class="row columns">
+<% @myProducts.each do |product| %>
+<div class="column is-one-quarter">
+    <div class="card large">
+          <div class="card-image">
+              <figure class="image">
+              <%= image_tag product.Image.url %>
+              </figure>
+          </div>
+        <div class="card-content" style="background:black">
+
+            <div class="content category-title" >
+            <%= product.title %>
+            </div>
+        </div>
+
+    </div>
+</div>
+<% end %>
+</div>
