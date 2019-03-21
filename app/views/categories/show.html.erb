@@ -1,8 +1,16 @@
-<h1><%= @category.name  %></h1>
+<h2 class="title is-2"><%= @category.name  %></h2>
 
-<% @category.products.each do |product|  %>
-    <%= product.title  %>
 
-    <%= image_tag product.Image.url %>
+<div class="columns is-multiline is-mobile">
+    <% @category.products.each do |product|  %>
+        <div class="column is-one-quarter box-border">
 
-<% end %>
+
+                <h1 class="title"><%= product.title  %></h1>
+
+                <%= image_tag product.Image.custom.url %>
+
+        </div>
+    <% end %>
+
+</div>

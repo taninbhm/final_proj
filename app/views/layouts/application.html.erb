@@ -18,8 +18,8 @@
       </div>
       <div id="navMenu"  class="navbar-menu">
         <div class="navbar-end">
-          <a href="#" class="navbar-item is-active">Home</a>
-
+             <%= link_to "Home", root_path, class:"navbar-item is-active" %>
+             <%= link_to "Categories", categories_path, class:"navbar-item" %>
               <div class="dropdown is-hoverable ">
               <div class="dropdown-trigger">
                 <div class="navbar-item" aria-haspopup="true" aria-controls="dropdown-menu4">
@@ -34,7 +34,7 @@
 
                 <% @myCategories.each do |category| %>
                   <a href="#" class="dropdown-item">
-                  <%= category.name %>
+                  <%= link_to category.name, category %>
                   </a>
                 <% end %>
 
@@ -48,10 +48,10 @@
 
             <% if user_signed_in? %>
 
-            <%= link_to('Logout', destroy_user_session_path, method: :delete, class:'navbar-item menu-items') %>
+           <%= link_to("Logout", destroy_user_session_path, method: :delete) %>
 
           <% else %>
-            <%= link_to('Login', new_user_session_path, class:'navbar-item menu-items') %>
+             <%= link_to('Login', new_user_session_path, class:'navbar-item menu-items') %>
 
           <% end %>
 
