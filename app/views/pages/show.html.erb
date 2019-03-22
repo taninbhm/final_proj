@@ -62,58 +62,19 @@
   <!-- Skills -->
   <div class="card">
     <div class="card-content skills-content">
-      <h3 class="title is-4">Skills</h3>
       <div class="content">
+        <nav class="panel">
+        <p class="panel-heading is-3">
+         <b> Discover </b>
+        </p>
+        <ul class="category-list">
+        <% @categories.each do |category| %>
 
-        <article class="media">
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>JavaScript:</strong>
-                <br>
-                <progress class="progress is-primary" value="90" max="100"></progress>
-              </p>
-            </div>
-          </div>
-        </article>
+            <li><%= link_to category.name, category%></li>
 
-
-        <article class="media">
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>Vue.js:</strong>
-                <br>
-                <progress class="progress is-primary" value="75" max="100"></progress>
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="media">
-          <div class="media-content">
-            <div class="content">
-              <p>
-                <strong>Ruby On Rails</strong>
-                <br>
-                <progress class="progress is-primary" value="95" max="100"></progress>
-              </p>
-            </div>
-          </div>
-        </article>
-
-        <article class="media">
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <strong>HTML5/CSS3</strong>
-              <br>
-              <progress class="progress is-primary" value="95" max="100"></progress>
-            </p>
-          </div>
-        </div>
-      </article>
-
+        <% end %>
+        </ul>
+         </nav>
 
       </div>
     </div>
