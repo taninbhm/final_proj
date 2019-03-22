@@ -1,11 +1,13 @@
 class PagesController < ApplicationController
     def Home
     end
-    def about
-    end
     def index
-    end
-    def show
-    end
+        @pages = Page.order(:title)
+        @pages = Page.all
+      end
+
+      def show
+        @page = Page.find(params[:id])
+      end
 
 end

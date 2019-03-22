@@ -18,12 +18,12 @@
       </div>
       <div id="navMenu"  class="navbar-menu">
         <div class="navbar-end">
-             <%= link_to "Home", root_path, class:"navbar-item is-active" %>
-             <%= link_to "Categories", categories_path, class:"navbar-item" %>
+             <%= link_to "Home", root_path, class:"navbar-item text-underline" %>
+
               <div class="dropdown is-hoverable ">
               <div class="dropdown-trigger">
                 <div class="navbar-item" aria-haspopup="true" aria-controls="dropdown-menu4">
-                  <a class="menu-items">Women</a>
+                  <a class="menu-items text-underline">Women</a>
                   <span class="icon is-small">
                     <i class="fas fa-angle-down" aria-hidden="true"></i>
                   </span>
@@ -42,12 +42,12 @@
                 </div>
               </div>
 
+
             <% @myPages.each do |page| %>
 
               <%= link_to page.title, page ,  class:"navbar-item"%>
 
             <% end %>
-
 
 
           <% if user_signed_in? %>
