@@ -15,11 +15,16 @@
     text-decoration: none;
 }
 
-.card {
-    height:400px;
-}
 
+.customized-card {
+    height:300px;
+}
 .category-list li {
 
-    list-style: none
+    list-style: none;
+    margin-bottom: 15px;
+}
+.category-list li a{
+text-decoration: none;
+color:black;
 }
