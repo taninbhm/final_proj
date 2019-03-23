@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.includes(:category).order(:title)
-    @products = Product.all
+    @products = Product.order(:id).page(params[:page]).per(2)
   end
 
   def show

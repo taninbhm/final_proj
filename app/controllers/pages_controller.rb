@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
     def Home
+
     end
     def index
         @pages = Page.order(:title)
