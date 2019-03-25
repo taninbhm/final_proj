@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :carts
   get 'products/index'
   get 'products/show'
   resources :categories, only: [:index, :show]
