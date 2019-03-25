@@ -17,7 +17,12 @@
                         <div class="content article-body">
                             <p><%= @product.description  %></p>
                             <b>Price: <%= number_to_currency @product.price  %></b>
-                            <p><%= button_to 'Add to Cart', '#', class:'add-to-cart' %></p>
+                            <%= form_tag order_items_path do %>
+                                <%= hidden_field_tag :@product, @product %>
+                                <%= number_field_tag :quantity , 1 %>
+                                <%= submit_tag "Add to Cart" %>
+                            <% end %>
+
                         </div>
                     </div>
                 </div>

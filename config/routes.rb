@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  resources :line_items
-  resources :carts
   get 'products/index'
   get 'products/show'
   resources :categories, only: [:index, :show]
   resources :products, only: [:index, :show]
   resources :pages
+  resources :order_items, path: '/cart/items'
   get 'tags/:tags/:id', to: 'categories#show', as: :tag
   get 'categories/index'
   get 'categories/show'
+  get '/cart', to: 'order_items#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, :controllers => { registrations: 'registrations' }
