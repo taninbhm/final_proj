@@ -56,3 +56,9 @@
 .card-height {
     height:500px;
 }
+
+.pagination {
+    margin: 10px;
+    float: left;
+}
+

@@ -17,6 +17,7 @@
                         <div class="content article-body">
                             <p><%= @product.description  %></p>
                             <b>Price: <%= number_to_currency @product.price  %></b>
+                            <p><%= button_to 'Add to Cart', '#', class:'add-to-cart' %></p>
                         </div>
                     </div>
                 </div>

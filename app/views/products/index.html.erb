@@ -1,3 +1,4 @@
+<div class="row columns pagination"><%= paginate @products %></div>
 <div class="row columns">
 <% @products.each do |product| %>
 <div class="column is-one-quarter">
@@ -18,5 +19,3 @@
 </div>
 <% end %>
 </div>
-
-<%= paginate @products %>
