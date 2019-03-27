@@ -1,0 +1,26 @@
+<h2 class="title"> Current Cart </h2>
+
+<table class="table is-striped is-hoverable ">
+    <thead>
+        <tr>
+            <td class="has-text-weight-bold has-text-centered">Product</td>
+            <td class="has-text-weight-bold has-text-centered">Price</td>
+            <td class="has-text-weight-bold has-text-centered">Quantity</td>
+            <td class="has-text-weight-bold has-text-centered"></td>
+        </tr>
+    </thead>
+    <tbody>
+        <% @order_items.each do |item|  %>
+            <tr>
+            <td class="has-text-centered"><%= item.product.title %></td>
+            <td class="has-text-centered"><%= number_to_currency item.price %></td>
+            <td class="has-text-centered"><%= item.quantity %></td>
+            <td class="has-text-centered">
+            <%= form_for item, method: :Delete do |f| %>
+                <%= f.submit "Remove" , class: 'is-danger' %>
+            <% end %>
+            </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>

@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   belongs_to :category
-  has_many :line_items
+  # belongs_to :order_item, optional: true
   validates :title, :description, :price, presence:true
 
   mount_uploader :Image, ImageUploader
