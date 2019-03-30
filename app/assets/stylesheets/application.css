@@ -61,3 +61,6 @@
     margin: 10px;
     float: left;
 }
+.btn-search input {
+    display: inline-block
+}

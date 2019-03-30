@@ -16,4 +16,12 @@ class OrderItemsController < ApplicationController
         redirect_to cart_path
 
     end
+
+    def destroy
+        @order_item = OrderItem.find(params[:id])
+        @order_item.destroy
+        session[:cart].delete(params[:id].to_i)
+        logger.debug session[:cart].inspect
+        redirect_to cart_path
+      end
 end

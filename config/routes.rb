@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'search_results', to: 'search#results', as: 'search_results'
   get 'products/index'
   get 'products/show'
   resources :categories, only: [:index, :show]
   resources :products, only: [:index, :show]
   resources :pages
+
   resources :order_items, path: '/cart/items'
   get 'tags/:tags/:id', to: 'categories#show', as: :tag
   get 'categories/index'
