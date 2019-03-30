@@ -7,10 +7,10 @@
   </div>
 
   <div class="column search-product is-one-third">
-    <%= form_tag("/search", method: "get") do %>
-        <%= text_field_tag(:q) %>
-        <%= submit_tag("Search") %>
-    <% end %>
+  <%= form_tag(search_results_path, method: "get")  do %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag "Search", class: 'btn-search' %>
+<% end %>
   </div>
 
   </div>

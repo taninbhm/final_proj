@@ -1,2 +1,21 @@
-<h1>Search#results</h1>
-<p>Find me in app/views/search/results.html.erb</p>
+<h1 class="title">Search Results</h1>
+
+
+<% @products.each do |product| %>
+    <div class="column is-one-quarter">
+        <div class="card large">
+              <div class="card-image">
+                  <figure class="image">
+                  <%= image_tag product.Image.url %>
+                  </figure>
+              </div>
+            <div class="card-content" style="background:black">
+
+                <div class="content category-title" >
+                <%= link_to product.title, product,{ :class => "category-title", :style => 'color:#fff' }%>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <% end %>
