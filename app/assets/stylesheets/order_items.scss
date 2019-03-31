@@ -1,6 +1,12 @@
 // Place all the styles related to the order_items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-form input.is-danger[type=submit]{
-    background-image: linear-gradient(180deg, red, red)
+
+.text-underline {
+    text-decoration: none;
+}
+
+form input[type=submit], form input[type=button], form button
+{
+    background: #ed537c
 }

@@ -1,4 +1,16 @@
+
+
 <h2 class="title"> Current Cart </h2>
+
+<div class="level-left">
+    <div class="level-item">
+    <p class="subtitle is-5">
+        <span class="icon-medium has-text-info" style="vertical-align:text-bottom">
+        <i class="fas fa-info-circle"></i>
+        </span> <%= link_to 'Keep Shopping', products_path %>
+    </p>
+    </div>
+</div>
 
 <table class="table is-striped is-hoverable ">
     <thead>
@@ -7,19 +19,26 @@
             <td class="has-text-weight-bold has-text-centered">Price</td>
             <td class="has-text-weight-bold has-text-centered">Quantity</td>
             <td class="has-text-weight-bold has-text-centered"></td>
+            <td class="has-text-weight-bold has-text-centered"></td>
         </tr>
     </thead>
     <tbody>
         <% @order_items.each do |item|  %>
             <tr>
-            <td class="has-text-centered"><%= item.product.title %></td>
-            <td class="has-text-centered"><%= number_to_currency item.price %></td>
-            <td class="has-text-centered"><%= item.quantity %></td>
-            <td class="has-text-centered">
-            <%= form_for item, method: :Delete do |f| %>
-                <%= f.submit "Remove" , class: 'is-danger' %>
-            <% end %>
-            </td>
+                <td class="has-text-centered"><%= item.product.title %></td>
+                <td class="has-text-centered"><%= number_to_currency item.price %></td>
+                <td class="has-text-centered"> <%= number_field_tag :quantity , item.quantity %></td>
+                <td class="has-text-centered">
+                    <%= form_for item, method: :put  do |f| %>
+                        <%= hidden_field_tag :quantity, item.quantity %>
+                        <%= f.submit "Update", class: "cart-btn" %>
+                    <% end %>
+                </td>
+                <td class="has-text-centered">
+                    <%= form_for item, method: :Delete do |f| %>
+                        <%= f.submit "Remove" , class: 'is-danger' %>
+                    <% end %>
+                </td>
             </tr>
         <% end %>
     </tbody>

@@ -33,6 +33,7 @@ gem "carrierwave"
 gem 'mini_magick'
 gem 'kaminari'
 gem "breadcrumbs_on_rails"
+gem 'stripe'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

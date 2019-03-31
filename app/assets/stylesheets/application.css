@@ -15,8 +15,6 @@
  */
 
  @import "bulma";
-
-
  .input {
 
     width:70%;
@@ -25,13 +23,23 @@
  .center {
      text-align: center
  }
-
+#shopping-cart-icon {
+    padding-left:7px;
+    padding-top:0px;
+    color:white
+}
  .menu-items {
      padding-top: 7px;
      color:white;
      text-decoration:none;
  }
 
+ .shooping-cart-logo {
+     margin-left:15px;
+ }
+#home-hover:hover {
+    background:none;
+}
 .text-underline {
     text-decoration: none;
 }

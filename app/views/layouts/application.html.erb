@@ -1,3 +1,4 @@
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,23 +15,30 @@
   <nav class="navbar is-black">
     <div class="container">
       <div class="navbar-brand">
-      <%= link_to "Shoe Chic", root_path, class:"navbar-item text-underline" %>
-
+      <%= link_to "Shoe Chic", root_path, class:"text-underline", style:'margin-top:13px; color:white' %>
       </div>
+
+      <div class="shooping-cart-logo">
+        <i class="fas fa-shopping-cart" style="margin-top:19px;"></i><%= link_to @order_items.to_a.sum(&:quantity),
+        cart_path, id: "shopping-cart-icon", class:"text-underline"%>
+      </div>
+
 
       <div id="navMenu"  class="navbar-menu">
         <div class="navbar-end">
-             <%= link_to "Home", root_path, class:"navbar-item text-underline" %>
+              <%= link_to "Home", root_path, class:"navbar-item text-underline" , id:"home-hover"%>
 
               <div class="dropdown is-hoverable ">
               <div class="dropdown-trigger">
-                <div class="navbar-item" aria-haspopup="true" aria-controls="dropdown-menu4">
-                  <a class="menu-items text-underline">Categories</a>
-                  <span class="icon is-small">
-                    <i class="fas fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </div>
+                  <div class="navbar-item" aria-haspopup="true" aria-controls="dropdown-menu4">
+                    <a class="menu-items text-underline">Categories</a>
+                    <span class="icon is-small">
+                      <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                  </div>
               </div>
+
+
               <div class="dropdown-menu" id="dropdown-menu4" role="menu">
                 <div class="dropdown-content">
 
