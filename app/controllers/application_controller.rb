@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
     before_action :def_pages
     # before_action :current_cart
     before_action :init_cart
+    before_action :shopping_items
 
     def def_categories
         @myCategories = Category.all
@@ -14,6 +15,10 @@ class ApplicationController < ActionController::Base
     end
     def def_pages
         @myPages = Page.all
+    end
+
+    def shopping_items
+        @order_items = OrderItem.find(session[:cart])
     end
 
     # def current_cart

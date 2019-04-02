@@ -2,11 +2,9 @@ class OrderItemsController < ApplicationController
 
     def index
         @order_items = OrderItem.find(session[:cart])
+        logger.debug session[:cart].inspect
     end
 
-    def show
-        @order_item = OrderItem.find(params[:id])
-    end
     def create
         @product_id = params[:product_id].to_i
         @quantity = params[:quantity].to_i
@@ -24,6 +22,7 @@ class OrderItemsController < ApplicationController
         @order_item = OrderItem.find(params[:id])
         @quantity = params[:quantity].to_i
         @order_item.update_attributes(quantity: @quantity)
+        @order_item.save
         session[:cart] << @order_item.id
         redirect_to cart_path
       end

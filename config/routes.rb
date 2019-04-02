@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show]
   resources :pages
   resources :order_items, only: [:create, :update, :destroy]
-
+  resources :charges, only: [:new, :create]
   get 'tags/:tags/:id', to: 'categories#show', as: :tag
   get 'categories/index'
   get 'categories/show'

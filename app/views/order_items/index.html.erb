@@ -1,18 +1,7 @@
 
-
 <h2 class="title"> Current Cart </h2>
 
-<div class="level-left">
-    <div class="level-item">
-    <p class="subtitle is-5">
-        <span class="icon-medium has-text-info" style="vertical-align:text-bottom">
-        <i class="fas fa-info-circle"></i>
-        </span> <%= link_to 'Keep Shopping', products_path %>
-    </p>
-    </div>
-</div>
-
-<table class="table is-striped is-hoverable ">
+<table class="table is-striped is-hoverable " style="width:100%">
     <thead>
         <tr>
             <td class="has-text-weight-bold has-text-centered">Product</td>
@@ -26,20 +15,42 @@
         <% @order_items.each do |item|  %>
             <tr>
                 <td class="has-text-centered"><%= item.product.title %></td>
-                <td class="has-text-centered"><%= number_to_currency item.price %></td>
-                <td class="has-text-centered"> <%= number_field_tag :quantity , item.quantity %></td>
+                <td class="has-text-centered"><%= number_to_currency item.price * item.quantity %></td>
+                <td class="has-text-centered"><%= item.quantity %></td>
                 <td class="has-text-centered">
-                    <%= form_for item, method: :put  do |f| %>
-                        <%= hidden_field_tag :quantity, item.quantity %>
-                        <%= f.submit "Update", class: "cart-btn" %>
+                    <%= form_for item, action: :update, method: :put  do |f| %>
+
+                        <%= number_field_tag :quantity , nil, style: 'width:20%'   %>
+                        <%= f.submit "Update", class: "button is-info is-active" %>
                     <% end %>
                 </td>
                 <td class="has-text-centered">
                     <%= form_for item, method: :Delete do |f| %>
-                        <%= f.submit "Remove" , class: 'is-danger' %>
+                        <%= f.submit "Remove" , class: 'button is-danger is-active' %>
                     <% end %>
                 </td>
             </tr>
         <% end %>
-    </tbody>
+        </tbody>
 </table>
+<h4 class="text-right" style="margin-left:5px">Total Price: <span style="color: green"><%= number_to_currency total_price %></span></h4>
+
+
+<div class="columns is-multiline is-mobile">
+  <div class="column is-one-quarter">
+    <code></code>
+  </div>
+
+  <div class="column is-one-quarter keep-shopping-btn">
+    <%= link_to 'Keep Shopping', products_path, class:"button is-fullwidth is-link is-focused" %>
+  </div>
+
+  <div class="column is-one-quarter keep-shopping-btn">
+    <%= link_to "Proceed to Checkout", new_charge_path, class:"button grey-darker is-fullwidth is-dark is-focused"%>
+  </div>
+
+  <div class="column is-one-quarter">
+    <code></code>
+  </div>
+
+</div>

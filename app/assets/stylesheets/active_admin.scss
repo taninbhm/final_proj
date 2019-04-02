@@ -15,3 +15,9 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+a.button, a:link.button, a:visited.button, input[type=submit], input[type=button], button {
+    background:none;
+    background-color: none;
+    border-radius: 0;
+     background-image: none;
+}

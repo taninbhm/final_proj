@@ -6,7 +6,14 @@
     text-decoration: none;
 }
 
-form input[type=submit], form input[type=button], form button
-{
-    background: #ed537c
+form input[type=submit] {
+    background: #4f91f9
+}
+
+.checkout_btn input {
+    background:blue;
+}
+
+.keep-shopping-btn a {
+    width:100%
 }

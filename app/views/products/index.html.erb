@@ -1,16 +1,21 @@
 <div class="columns is-multiline is-mobile">
-  <div class="column  is-one-third">
-  <%= paginate @products %>
+  <div class="column  is-one-quarter">
+  <%= paginate @products , class:'pagination-link' %>
   </div>
   <div class="column is-one-quarter">
 
   </div>
 
-  <div class="column search-product is-one-third">
-  <%= form_tag(search_results_path, method: "get")  do %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag "Search", class: 'btn-search' %>
-<% end %>
+  <div class="column is-one-quarter">
+
+  </div>
+
+
+  <div class="column search-product is-one-quarter" style="margin-top:10px;">
+    <%= form_tag(search_results_path, method: "get")  do %>
+      <%= text_field_tag(:q) %>
+      <%= submit_tag "Search", class: 'button is-link' %>
+    <% end %>
   </div>
 
   </div>

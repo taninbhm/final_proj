@@ -1,4 +1,3 @@
-<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
   </head>
 
   <body>
@@ -26,6 +27,9 @@
 
       <div id="navMenu"  class="navbar-menu">
         <div class="navbar-end">
+            <span class="icon" style="margin-top:14px;">
+             <i class="fas fa-home"></i>
+            </span>
               <%= link_to "Home", root_path, class:"navbar-item text-underline" , id:"home-hover"%>
 
               <div class="dropdown is-hoverable ">
@@ -43,9 +47,7 @@
                 <div class="dropdown-content">
 
                 <% @myCategories.each do |category| %>
-                  <a href="#" class="dropdown-item">
-                  <%= link_to category.name, category %>
-                  </a>
+                  <%= link_to category.name, category, class:"dropdown-item" %>
                 <% end %>
 
                 </div>
