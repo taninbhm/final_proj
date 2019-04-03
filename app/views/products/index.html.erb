@@ -1,24 +1,33 @@
+
 <div class="columns is-multiline is-mobile">
   <div class="column  is-one-quarter">
-  <%= paginate @products , class:'pagination-link' %>
+  <%= paginate @products , theme: 'twitter-bootstrap-4',
+  pagination_class: "pagination-sm",
+  nav_class: "d-inline-b" %>
   </div>
   <div class="column is-one-quarter">
 
   </div>
 
-  <div class="column is-one-quarter">
+  <div class="column is-half">
 
+  <%= form_for Search.new do |f| %>
+    <span>
+      <%= f.text_field :keywords %>
+    </span>
+    <span>
+      <%= f.collection_select :category_id, Category.order(:name), :id, :name,  include_blank: true %>
+    </span>
+    <span>
+      <%= f.label :min_price, "Price Range:" %>
+      <%= f.text_field :min_price, size: 10 %> -
+      <%= f.text_field :max_price, size: 10 %>
+    </span>
+    <span class="actions"><%= f.submit "Search", class:"button is-info" %></span>
+  <% end %>
   </div>
 
 
-  <div class="column search-product is-one-quarter" style="margin-top:10px;">
-    <%= form_tag(search_results_path, method: "get")  do %>
-      <%= text_field_tag(:q) %>
-      <%= submit_tag "Search", class: 'button is-link' %>
-    <% end %>
-  </div>
-
-  </div>
 
 <div class="row columns">
 

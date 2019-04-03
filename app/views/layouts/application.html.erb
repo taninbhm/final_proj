@@ -7,22 +7,21 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 
   </head>
 
-  <body>
 
+  <body>
   <nav class="navbar is-black">
     <div class="container">
       <div class="navbar-brand">
       <%= link_to "Shoe Chic", root_path, class:"text-underline", style:'margin-top:13px; color:white' %>
       </div>
 
-      <div class="shooping-cart-logo">
-        <i class="fas fa-shopping-cart" style="margin-top:19px;"></i><%= link_to @order_items.to_a.sum(&:quantity),
-        cart_path, id: "shopping-cart-icon", class:"text-underline"%>
-      </div>
+       <span style="margin-top:13px; margin-left:15px"> <%= link_to @order_items.to_a.sum(&:quantity),
+        cart_path, class:"text-underline" , style:"color:white"%> items </span>
+
 
 
       <div id="navMenu"  class="navbar-menu">

@@ -1,5 +1,7 @@
 class OrderItemsController < ApplicationController
 
+    before_action :logd
+
     def index
         @order_items = OrderItem.find(session[:cart])
         logger.debug session[:cart].inspect
@@ -13,7 +15,9 @@ class OrderItemsController < ApplicationController
                                     product_id: @product_id,
                                     price: @price)
         @order_item.save
-        session[:cart] << @order_item.id
+        @quantity.times do
+            session[:cart] << "#{@order_item.id}"
+        end
         redirect_to cart_path
 
     end
@@ -23,16 +27,27 @@ class OrderItemsController < ApplicationController
         @quantity = params[:quantity].to_i
         @order_item.update_attributes(quantity: @quantity)
         @order_item.save
-        session[:cart] << @order_item.id
+        session[:cart].find.count.times do
+            session[:cart].delete(params[:id])
+        end
+
+        @quantity.times do
+            session[:cart] << "#{@order_item.id}"
+        end
         redirect_to cart_path
       end
+
+    def logd
+        logger.debug session[:cart].inspect
+    end
 
 
     def destroy
         @order_item = OrderItem.find(params[:id])
+        @quantity = params[:quantity].to_i
         @order_item.destroy
-        session[:cart].delete(params[:id].to_i)
         logger.debug session[:cart].inspect
         redirect_to cart_path
-      end
+    end
+
 end

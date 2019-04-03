@@ -34,8 +34,9 @@ gem 'mini_magick'
 gem 'kaminari'
 gem "breadcrumbs_on_rails"
 gem 'bootstrap4-kaminari-views'
-
+gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
 gem 'stripe'
+gem 'rubocop', '~> 0.66.0', require: false
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'

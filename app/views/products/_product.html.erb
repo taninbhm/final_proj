@@ -1,13 +1,15 @@
 
 <% @products.each do |product| %>
     <div class="column is-one-quarter">
-        <div class="card large">
-              <div class="card-image">
+        <div class="card large mouse">
+
+              <div class="card-image" v-on:mouseover="mouseover"
+              v-on:mouseleave="mouseleave"><p style="padding-left:40%;">{{message}}</p>
                   <figure class="image">
-                  <%= image_tag product.Image.url %>
+                  <%= image_tag product.Image.url%>
                   </figure>
               </div>
-            <div class="card-content" style="background:black">
+            <div class="card-content bg-black hover:bg-blue"  v-bind:style="{backgroundColor: bgColor}">
 
                 <div class="content category-title" >
                 <%= link_to product.title, product,{ :class => "category-title", :style => 'color:#fff' }%>
@@ -16,4 +18,35 @@
 
         </div>
     </div>
+
     <% end %>
+
+
+
+    <script src='https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js'></script>
+    <script>
+    new Vue({
+        el: '.mouse',
+        data: {
+          message: ""
+        },
+        methods: {
+          mouseover: function(){
+            this.message = 'Good!'
+          },
+          mouseleave: function(){
+            this.message = ''
+          }
+        }
+      })
+    </script>
+
+    <script>
+      var app = new Vue ({
+        el: '#app'
+        data: {
+            bgColor:"#CCC"
+        }
+      })
+    </script>
+
