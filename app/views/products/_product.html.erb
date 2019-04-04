@@ -3,7 +3,7 @@
     <div class="column is-one-quarter">
         <div class="card large mouse">
        <div class="card-image" v-on:mouseover="mouseover(<%= product.price %>, <%= product.id %>)"
-              v-on:mouseleave="mouseleave(<%= product.id %>)"><p style="padding-left:40%;" id="<%= product.id %>"> </p>
+              v-on:mouseleave="mouseleave(<%= product.id %>)"><p class="has-text-info has-text-weight-bold"  style="padding-left:40%;" id="<%= product.id %>"> </p>
                   <figure class="image">
                   <%= image_tag product.Image.url%>
                   </figure>
