@@ -34,6 +34,7 @@ gem "carrierwave"
 gem 'mini_magick'
 gem 'gravatar_image_tag'
 gem 'kaminari'
+gem 'rubocop'
 gem "breadcrumbs_on_rails"
 gem 'bootstrap4-kaminari-views'
 gem 'webpacker', git: 'https://github.com/rails/webpacker.git'
