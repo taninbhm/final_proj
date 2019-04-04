@@ -46,7 +46,6 @@ class OrderItemsController < ApplicationController
         @order_item = OrderItem.find(params[:id])
         @quantity = params[:quantity].to_i
         @order_item.destroy
-        logger.debug session[:cart].inspect
         redirect_to cart_path
     end
 
